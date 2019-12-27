@@ -1,13 +1,13 @@
 {
   "name": "@achannarasappa/locust-cli-dashboard",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "CLI dashboard for Locust",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "coverage": "nyc --reporter=text --reporter=lcov mocha --exit --timeout 10000 './lib/**/*.spec.js'",
-    "lint": "eslint ./lib ./test ./bin",
-    "lint:fix": "eslint --fix ./lib ./test ./bin",
-    "test": "npx mocha --exit --timeout 10000 './lib/term/index.spec.js'",
+    "lint": "eslint ./lib",
+    "lint:fix": "eslint --fix ./lib",
+    "test": "mocha --exit --timeout 10000 './{,!(node_modules)/**/}*.spec.js'",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Ani Channarasappa",
@@ -22,5 +22,12 @@
   "dependencies": {
     "ramda": "^0.26.1",
     "terminal-kit": "^1.32.2"
+  },
+  "eslintConfig": {
+    "extends": "@achannarasappa/eslint-config",
+    "env": {
+      "mocha": true,
+      "node": true
+    }
   }
 }
