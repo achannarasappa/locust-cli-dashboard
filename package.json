@@ -16,6 +16,7 @@
     "@achannarasappa/eslint-config": "^1.0.4",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
+    "husky": "^3.1.0",
     "nyc": "^15.0.0",
     "sinon": "^8.0.1"
   },
@@ -28,6 +29,14 @@
     "env": {
       "mocha": true,
       "node": true
+    },
+    "rules": {
+      "consistent-return": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm audit"
     }
   }
 }
