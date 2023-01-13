@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "ramda": "^0.26.1",
-    "terminal-kit": "^1.32.2"
+    "terminal-kit": "^2.1.8"
   },
   "eslintConfig": {
     "extends": "@achannarasappa/eslint-config",
